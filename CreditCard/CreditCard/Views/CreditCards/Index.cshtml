@@ -1,0 +1,47 @@
+@model List<CreditCardListViewModel>
+<h2>My Credit Cards</h2>
+
+<div class="mb-3">
+    <a asp-action="Create" class="btn btn-dark me-2">+ Add New Card</a>
+
+    <!-- BUTONI LOGOUT I RI -->
+    <form asp-controller="Account" asp-action="Logout" method="post" class="d-inline">
+        @Html.AntiForgeryToken()
+        <button type="submit" class="btn btn-outline-danger">
+            🚪 Logout
+        </button>
+    </form>
+</div>
+<!-- Tabela për shfaqjen e kartave ekzistuese -->
+<table class="table">
+    <thead>
+        <tr>
+            <th>Card Holder</th>
+            <th>Last 4 Digits</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.Any())
+        {
+            @foreach (var card in Model)
+            {
+                <tr>
+                    <td>@card.CardHolderName</td>
+                    <td>**** **** **** @card.Last4Digits</td>
+                  <td class="text-center">
+                        <a asp-action="Details" asp-route-id="@card.Id" class="btn btn-info btn-sm">View</a>
+                        <a asp-action="Edit"    asp-route-id="@card.Id" class="btn btn-warning btn-sm">Edit</a>
+                        <a asp-action="Delete"  asp-route-id="@card.Id" class="btn btn-danger btn-sm">Delete</a>
+                    </td>
+                </tr>
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="3" class="text-center">You haven't added any credit cards yet. Start by clicking 'Add New Card'.</td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,53 @@
+@model global::CreditCard.ViewModels.CreditCardCreateViewModel
+
+
+@{
+    ViewData["Title"] = "Add Credit Card";
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow rounded-4">
+                <div class="card-body p-4">
+                    <h3 class="text-center mb-4">💳 Add Credit Card</h3>
+
+                    <form asp-action="Create" method="post">
+
+                        <div class="mb-3">
+                            <label asp-for="CardHolderName" class="form-label"></label>
+                            <input asp-for="CardHolderName" class="form-control" />
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="CardNumber" class="form-label"></label>
+                            <input asp-for="CardNumber" class="form-control" maxlength="16" />
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="Cvv" class="form-label"></label>
+                            <input asp-for="Cvv" class="form-control" maxlength="4" />
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label asp-for="ExpirationMonth" class="form-label"></label>
+                                <input asp-for="ExpirationMonth" class="form-control" />
+                            </div>
+
+                            <div class="col-md-6 mb-3">
+                                <label asp-for="ExpirationYear" class="form-label"></label>
+                                <input asp-for="ExpirationYear" class="form-control" />
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary w-100">
+                            Save Card
+                        </button>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
