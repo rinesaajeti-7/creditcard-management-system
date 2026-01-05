@@ -1,0 +1,20 @@
+## Skedarë dhe dosje specifike të .NET
+[Bb]in/
+[Oo]bj/
+[Dd]ebug/
+[Rr]elease/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+## Dosja e paketave të restauruara të NuGet
+.nuget/
+packages/
+
+## Skedarë të konfigurimit lokal (mund të përmbajnë fjalëkalime)
+appsettings.Development.json
+
+## Skedarë dhe dosje të IDE-ve
+.vs/
+.vscode/
