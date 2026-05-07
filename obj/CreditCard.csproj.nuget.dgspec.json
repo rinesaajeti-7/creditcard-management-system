@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/rinesa/Desktop/Creditcard1/CreditCard/CreditCard/CreditCard.csproj": {}
+    "/Users/rinesa/Desktop/Creditcard1/CreditCard/CreditCard.csproj": {}
   },
   "projects": {
-    "/Users/rinesa/Desktop/Creditcard1/CreditCard/CreditCard/CreditCard.csproj": {
+    "/Users/rinesa/Desktop/Creditcard1/CreditCard/CreditCard.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/rinesa/Desktop/Creditcard1/CreditCard/CreditCard/CreditCard.csproj",
+        "projectUniqueName": "/Users/rinesa/Desktop/Creditcard1/CreditCard/CreditCard.csproj",
         "projectName": "CreditCard",
-        "projectPath": "/Users/rinesa/Desktop/Creditcard1/CreditCard/CreditCard/CreditCard.csproj",
+        "projectPath": "/Users/rinesa/Desktop/Creditcard1/CreditCard/CreditCard.csproj",
         "packagesPath": "/Users/rinesa/.nuget/packages/",
-        "outputPath": "/Users/rinesa/Desktop/Creditcard1/CreditCard/CreditCard/obj/",
+        "outputPath": "/Users/rinesa/Desktop/Creditcard1/CreditCard/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/rinesa/.nuget/NuGet/NuGet.Config"

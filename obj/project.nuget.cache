@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "++nXzQXPkL0=",
+  "dgSpecHash": "pYUkd3I0dWI=",
   "success": true,
-  "projectFilePath": "/Users/rinesa/Desktop/Creditcard1/CreditCard/CreditCard/CreditCard.csproj",
+  "projectFilePath": "/Users/rinesa/Desktop/Creditcard1/CreditCard/CreditCard.csproj",
   "expectedPackageFiles": [
     "/Users/rinesa/.nuget/packages/bcrypt.net-next/4.0.3/bcrypt.net-next.4.0.3.nupkg.sha512",
     "/Users/rinesa/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",
