@@ -18,6 +18,58 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = /Users/rinesa/Desktop/Creditcard1/CreditCard/CreditCard
 build_property._RazorSourceGeneratorDebug = 
 
+[/Users/rinesa/Desktop/Creditcard1/CreditCard/CreditCard/CreditCard/CreditCard/Views/Account/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Q3JlZGl0Q2FyZC9DcmVkaXRDYXJkL1ZpZXdzL0FjY291bnQvTG9naW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/rinesa/Desktop/Creditcard1/CreditCard/CreditCard/CreditCard/CreditCard/Views/Account/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Q3JlZGl0Q2FyZC9DcmVkaXRDYXJkL1ZpZXdzL0FjY291bnQvUmVnaXN0ZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/rinesa/Desktop/Creditcard1/CreditCard/CreditCard/CreditCard/CreditCard/Views/CreditCards/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Q3JlZGl0Q2FyZC9DcmVkaXRDYXJkL1ZpZXdzL0NyZWRpdENhcmRzL0NyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/rinesa/Desktop/Creditcard1/CreditCard/CreditCard/CreditCard/CreditCard/Views/CreditCards/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Q3JlZGl0Q2FyZC9DcmVkaXRDYXJkL1ZpZXdzL0NyZWRpdENhcmRzL0RlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/rinesa/Desktop/Creditcard1/CreditCard/CreditCard/CreditCard/CreditCard/Views/CreditCards/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Q3JlZGl0Q2FyZC9DcmVkaXRDYXJkL1ZpZXdzL0NyZWRpdENhcmRzL0RldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/rinesa/Desktop/Creditcard1/CreditCard/CreditCard/CreditCard/CreditCard/Views/CreditCards/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Q3JlZGl0Q2FyZC9DcmVkaXRDYXJkL1ZpZXdzL0NyZWRpdENhcmRzL0VkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/rinesa/Desktop/Creditcard1/CreditCard/CreditCard/CreditCard/CreditCard/Views/CreditCards/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Q3JlZGl0Q2FyZC9DcmVkaXRDYXJkL1ZpZXdzL0NyZWRpdENhcmRzL0luZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/rinesa/Desktop/Creditcard1/CreditCard/CreditCard/CreditCard/CreditCard/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Q3JlZGl0Q2FyZC9DcmVkaXRDYXJkL1ZpZXdzL0hvbWUvSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/rinesa/Desktop/Creditcard1/CreditCard/CreditCard/CreditCard/CreditCard/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Q3JlZGl0Q2FyZC9DcmVkaXRDYXJkL1ZpZXdzL0hvbWUvUHJpdmFjeS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/rinesa/Desktop/Creditcard1/CreditCard/CreditCard/CreditCard/CreditCard/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Q3JlZGl0Q2FyZC9DcmVkaXRDYXJkL1ZpZXdzL1NoYXJlZC9FcnJvci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/rinesa/Desktop/Creditcard1/CreditCard/CreditCard/CreditCard/CreditCard/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Q3JlZGl0Q2FyZC9DcmVkaXRDYXJkL1ZpZXdzL1NoYXJlZC9fVmFsaWRhdGlvblNjcmlwdHNQYXJ0aWFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/rinesa/Desktop/Creditcard1/CreditCard/CreditCard/CreditCard/CreditCard/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Q3JlZGl0Q2FyZC9DcmVkaXRDYXJkL1ZpZXdzL19WaWV3SW1wb3J0cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/rinesa/Desktop/Creditcard1/CreditCard/CreditCard/CreditCard/CreditCard/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Q3JlZGl0Q2FyZC9DcmVkaXRDYXJkL1ZpZXdzL19WaWV3U3RhcnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/rinesa/Desktop/Creditcard1/CreditCard/CreditCard/Views/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNjb3VudC9Mb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -69,6 +121,10 @@ build_metadata.AdditionalFiles.CssScope =
 [/Users/rinesa/Desktop/Creditcard1/CreditCard/CreditCard/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/rinesa/Desktop/Creditcard1/CreditCard/CreditCard/CreditCard/CreditCard/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Q3JlZGl0Q2FyZC9DcmVkaXRDYXJkL1ZpZXdzL1NoYXJlZC9fTGF5b3V0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = b-ktmzh25cek
 
 [/Users/rinesa/Desktop/Creditcard1/CreditCard/CreditCard/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19MYXlvdXQuY3NodG1s
