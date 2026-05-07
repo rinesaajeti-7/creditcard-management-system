@@ -1,0 +1,64 @@
+@model CreditCardEditViewModel
+
+@{
+    ViewData["Title"] = "Edit Credit Card";
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow rounded-4">
+                <div class="card-header bg-warning text-dark">
+                    <h4 class="mb-0">✏️ Edit Credit Card</h4>
+                </div>
+                <div class="card-body p-4">
+
+                    <form asp-action="Edit" method="post">
+                        <input type="hidden" asp-for="Id" />
+
+                        <div class="mb-3">
+                            <label asp-for="CardHolderName" class="form-label"></label>
+                            <input asp-for="CardHolderName" class="form-control" />
+                            <span asp-validation-for="CardHolderName" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Card Number</label>
+                            <div class="form-control bg-light">
+                                **** **** **** @Model.Last4Digits
+                            </div>
+                            <small class="text-muted">Card number cannot be changed.</small>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="Cvv" class="form-label"></label>
+                            <input asp-for="Cvv" class="form-control" maxlength="4" />
+                            <span asp-validation-for="Cvv" class="text-danger"></span>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label asp-for="ExpirationMonth" class="form-label"></label>
+                                <input asp-for="ExpirationMonth" class="form-control" placeholder="MM" />
+                                <span asp-validation-for="ExpirationMonth" class="text-danger"></span>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label asp-for="ExpirationYear" class="form-label"></label>
+                                <input asp-for="ExpirationYear" class="form-control" placeholder="YYYY" />
+                                <span asp-validation-for="ExpirationYear" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="d-grid mt-4">
+                            <button type="submit" class="btn btn-success">Save Changes</button>
+                        </div>
+                    </form>
+
+                    <div class="text-center mt-3">
+                        <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
