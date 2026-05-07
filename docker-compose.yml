@@ -1,0 +1,26 @@
+services:
+  postgres:
+    image: postgres:15
+    container_name: creditcard_db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 12341
+      POSTGRES_DB: creditcard_db
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  app:
+    build: .
+    container_name: creditcard_app
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__DefaultConnection=Host=postgres;Port=5432;Database=creditcard_db;Username=postgres;Password=12341
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgres
+
+volumes:
+  postgres_data:

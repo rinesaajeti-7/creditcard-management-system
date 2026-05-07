@@ -5,23 +5,20 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
-
+using Npgsql;   // <--- shtuar
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services
-builder.Services.AddControllersWithViews();
-
-// Add PostgreSQL (EF Core)
+// Lexo connection string nga DATABASE_URL (Render) ose appsettings.json
+var connectionString = GetConnectionString(builder.Configuration);
 builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"))
+    options.UseNpgsql(connectionString)
 );
 
-// DI for services
+builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<AuthService>();
 builder.Services.AddScoped<CreditCardService>();
 
-// In Program.cs, make sure you're not passing null to Encoding.GetBytes
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>
     {
@@ -31,27 +28,31 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             ValidateAudience = true,
             ValidateLifetime = true,
             ValidateIssuerSigningKey = true,
-            ValidIssuer = builder.Configuration["Jwt:Issuer"] ?? "CreditCardApp", // Add fallback
-            ValidAudience = builder.Configuration["Jwt:Audience"] ?? "CreditCardApp", // Add fallback
+            ValidIssuer = builder.Configuration["Jwt:Issuer"] ?? "CreditCardApp",
+            ValidAudience = builder.Configuration["Jwt:Audience"] ?? "CreditCardApp",
             IssuerSigningKey = new SymmetricSecurityKey(
-                Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"] ?? "DefaultKeyAtLeast16Chars")) // Add fallback
+                Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"] ?? "DefaultKeyAtLeast16Chars"))
         };
     });
-    
-// Add authentication with default scheme
+
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
     .AddCookie(options =>
     {
         options.LoginPath = "/Account/Login";
         options.AccessDeniedPath = "/Account/AccessDenied";
-        // Other cookie options as needed
     });
 
 builder.Services.AddAuthorization();
 
 var app = builder.Build();
 
-// Middleware pipeline
+// Apliko migrimet
+using (var scope = app.Services.CreateScope())
+{
+    var dbContext = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+    dbContext.Database.Migrate();
+}
+
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
@@ -60,17 +61,38 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
-
 app.UseRouting();
-
-// ✅ Order matters: authentication before authorization
 app.UseAuthentication();
 app.UseAuthorization();
 
-// MVC routing
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Account}/{action=Login}/{id?}"
 );
 
-app.Run();
+// Për Render – përdor portin nga env PORT
+var port = Environment.GetEnvironmentVariable("PORT") ?? "8080";
+app.Run($"http://0.0.0.0:{port}");
+
+static string GetConnectionString(IConfiguration config)
+{
+    var databaseUrl = Environment.GetEnvironmentVariable("DATABASE_URL");
+    if (!string.IsNullOrEmpty(databaseUrl))
+    {
+        var uri = new Uri(databaseUrl);
+        var parts = uri.UserInfo.Split(':');
+        var user = parts[0];
+        var password = parts[1];
+        return new NpgsqlConnectionStringBuilder
+        {
+            Host = uri.Host,
+            Port = uri.Port > 0 ? uri.Port : 5432,
+            Username = user,
+            Password = password,
+            Database = uri.AbsolutePath.TrimStart('/'),
+            SslMode = SslMode.Require
+        }.ToString();
+    }
+    return config.GetConnectionString("DefaultConnection")
+           ?? throw new InvalidOperationException("No connection string found.");
+}
